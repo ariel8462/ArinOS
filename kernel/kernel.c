@@ -12,7 +12,8 @@ void kernel_main()
 
     for (int i = 1; i <= 1000; i++)
     {
-        kprint(itoa(print_fibonacci_kernel(i)));
+        char number[] = itoa(print_fibonacci_kernel(i), number);
+        kprint(number);
     }
 }
 
