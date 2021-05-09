@@ -1,4 +1,8 @@
 #include "kernel.h"
+#include "util.h"
+#include "../drivers/ports.h"
+#include "../drivers/screen.h"
+
 
 void kernel_main()
 {
@@ -8,7 +12,7 @@ void kernel_main()
 
     for (int i = 1; i <= 1000; i++)
     {
-        kprint((char*) print_fibonacci_kernel(i));
+        kprint(itoa(print_fibonacci_kernel(i)));
     }
 }
 
