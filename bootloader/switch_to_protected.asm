@@ -6,7 +6,7 @@ switch_to_pm:
     lgdt [gdt_descriptor] ; Loads the GDT descriptor
 
     mov eax, cr0
-    or eax, 0x1 ; Sets the default mode as 32-bit
+    or eax, 0x1 ; Sets the default mode to 32-bit
     mov cr0, eax
 
     jmp CODE_SEG:init_pm

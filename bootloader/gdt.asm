@@ -17,7 +17,7 @@ gdt_code:
     db 0x0    
 
 
-;GDT for data segment
+; GDT for data segment
 gdt_data:
     dw 0xffff
     dw 0x0
