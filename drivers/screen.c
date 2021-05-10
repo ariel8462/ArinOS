@@ -2,6 +2,7 @@
 #include "ports.h"
 #include "../kernel/util.h"
 
+/* Prints a message at the specified location */
 void kprint_at(char *message, int col, int row)
 {
     int offset;
@@ -89,7 +90,7 @@ int print_char(char c, int col, int row, char attr)
     }
 }
 
-
+/* Uses the VGA ports directly to get the current cursor location */
 int get_cursor_offset()
 {
     port_byte_out(REG_SCREEN_CTRL, 14);
@@ -102,6 +103,7 @@ int get_cursor_offset()
 }
 
 
+/* Similar to get_cursor_offset() but writes data instead */
 void set_cursor_offset(int offset)
 {
     offset = offset / 2;

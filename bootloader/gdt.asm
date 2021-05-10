@@ -1,10 +1,11 @@
 gdt_start:
 
-gdt_null:
+    ; GDT starts with 8-byte null
     dd 0x0
     dd 0x0
 
 
+; GDT for code segment
 gdt_code:
     dw 0xffff
     dw 0x0
@@ -16,6 +17,7 @@ gdt_code:
     db 0x0    
 
 
+;GDT for data segment
 gdt_data:
     dw 0xffff
     dw 0x0

@@ -1,11 +1,13 @@
 print:
     pusha
 
+; Prints a string while in real mode
 start:
     mov al, [bx]
     cmp al, 0
     je done
 
+    ; BIOS interrupt for printing
     mov ah, 0x0E
     int 10h
 

@@ -1,5 +1,7 @@
 [bits 32]
 
+; Prints a string while in 32-bit protected mode
+
 VIDEO_MEMORY equ 0xB8000
 WHITE_OB_BLACK equ 0x0F
 

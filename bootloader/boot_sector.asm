@@ -1,4 +1,4 @@
-[org 0x7c00]
+[org 0x7c00] ; 32-bit protected mode
 
 KERNEL_OFFSET equ 0x1000
 
@@ -10,8 +10,8 @@ KERNEL_OFFSET equ 0x1000
     call print
     call print_new_line
 
-    call load_kernel
-    call switch_to_pm
+    call load_kernel ; Reads the kernel from the disk
+    call switch_to_pm ; Disables interrupts, loads GDT and switches to protected mode
     jmp $
 
 %include "print_string.asm"
@@ -38,6 +38,7 @@ load_kernel:
 begin_pm:
     mov ebx, PROTECTED_MODE_MESSAGE
     call print_string_pm
+    call KERNEL_OFFSET ; Gives control to the kernel
     jmp $
 
 

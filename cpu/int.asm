@@ -2,7 +2,8 @@
 [extern irq_handler]
 
 isr_common_stub:
-	pusha
+	pusha ; Saves CPU state
+    
 	mov ax, ds
 	push eax
 	mov ax, 0x10
@@ -96,6 +97,7 @@ global irq13
 global irq14
 global irq15
 
+; Exceptions and Interrupts
 isr0:
     cli
     push byte 0
